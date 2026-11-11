@@ -7,7 +7,7 @@ potential weak points, and mapping dependencies.
 No backend, no account, no build step. Data stays in this browser
 (`localStorage`), and no claim text or document is uploaded.
 
-> **Support tool, not legal advice.** Argonaut is a support tool for patent analysis.
+> Argonaut is a support tool for patent analysis.
 It does not replace review by a qualified lawyer or patent attorney. Verify every
 result against the current law and the record.
 
