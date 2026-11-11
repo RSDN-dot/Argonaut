@@ -4,42 +4,30 @@ Open-source and rule-based patent claims analysis tools. A single-page workspace
 reading patent claims, charting them against evidence, comparing versions, reviewing
 potential weak points, and mapping dependencies.
 
-No backend, no account, no build step. Case data stays in this browser
+No backend, no account, no build step. Data stays in this browser
 (`localStorage`), and no claim text or document is uploaded.
 
-> **Litigation aid, not legal advice.** Argonaut flags potential issues and
-> records your own analysis. It does not decide infringement, validity, claim
-> construction, or scope, and it does not replace review by a qualified patent
-> litigator or patent professional. Findings are prompts for review, never
-> conclusions. Verify every result against the current law and the record.
+> **Support tool, not legal advice.** Argonaut is a support tool for patent analysis.
+It does not replace review by a qualified lawyer or patent attorney. Verify every
+result against the current law and the record.
 
 ## What is included
 
-- **Claim chart** — split a claim into elements and record evidence, exhibit and
-  pinpoint references, a verdict, and notes. Infringement/FTO and validity chart
-  types, named references and embodiments, a priority-date warning, and
-  Markdown/CSV exports.
-- **Claim comparison** — word- and character-level redline with inline or
-  side-by-side views, four comparison framings (original vs amended, granted vs
-  application, two versions, claim vs prior art), feature-change and overlap
-  views, and optional EPC support checks for amendments.
-- **Claim review** — rule-based findings for the selected jurisdiction, with
-  per-issue dismissal, sorting, grouping, copying, and Markdown/CSV export. A
-  specification field enables definition and support checks. Send a term to the
-  construction (US) or interpretation (EPC) list.
-- **Claim tree** — dependency forest with independent/dependent/orphan status,
-  orphan and multiple-dependent-claim detection, and normal or expanded
-  Markdown exports.
+- **Claim chart** to map patent claims.
+- **Claim comparison** to compare claim versions word by word, down to the character.
+- **Claim review** with rule-based findings to assess potential weak points under US practice.
+- **Claim tree** to see the dependency structure of every claim, with each dependent
+  claim sitting under its parent.
 
 Two jurisdictions share one code path:
 
-- **United States** — six review headings: eligibility, definiteness,
-  description, enablement, structure, and consistency.
-- **Europe (UPC)** — 13 EPC review sections, including added subject-matter and
-  extension-of-protection hints.
+- **United States** — 6 review headings: Eligibility, Definiteness,
+  Description, Enablement, Structure, and Consistency.
+- **EPC** — 13 EPC review sections based on the EPO guidelines on patentability: Technical, Two-part form,
+  Category, Clarity, Antecedent, Relative terms, Optional features, Result / negative, References, Parameters,
+  Support, Conciseness, Numbering / form.
 
-The mode changes rule selection, labels, vocabulary, and export headers; it does
-not change the stored case data.
+The mode changes rule selection, labels, vocabulary, and export headers.
 
 ## PDF import and OCR
 
@@ -59,15 +47,6 @@ and OCR do not need a network connection.
 Browsers block the background workers used by PDF.js and Tesseract.js on
 `file://` pages, so run the app from a local web server or from the hosted site
 when you need PDF import or OCR. Pasted text works either way.
-
-## Patent-number lookup
-
-Each claim box has a lookup for a patent number such as `US 10,000,000 B2`.
-Argonaut normalises the number, reuses a browser-cached copy when available, and
-otherwise tries to read the public patent page. Most patent servers block
-cross-origin reads, so the fallback is a paste dialog: open the patent page,
-copy its claims, and Argonaut extracts and numbers them locally. Only the patent
-number is sent; claim text is not.
 
 ## Privacy
 
@@ -94,26 +73,6 @@ HTTP origin.
 Exports build `.docx`, Markdown, and CSV files in the browser. Print styles hide
 the controls so printouts show the analysis only.
 
-## Publish with GitHub Pages
-
-1. Create a new **public** repository on GitHub. Do not add a README or
-   `.gitignore` there; this folder already has them.
-2. On the repository page, choose **Add file → Upload files**, then drag the
-   **contents** of this folder into the browser (not the folder itself), or
-   upload the provided ZIP, extract it locally, and drag the extracted
-   contents. Keep the `vendor/` folder structure intact.
-3. Make sure `.nojekyll` is present at the repository root. If your browser
-   hides dotfiles during upload, use **Add file → Create new file**, name it
-   `.nojekyll`, leave it empty, and commit.
-4. Open **Settings → Pages**. Under **Build and deployment**, choose
-   **Deploy from a branch**, branch **main**, folder **/ (root)**, and save.
-5. Wait for the Pages URL, then open it and check that the sidebar reports
-   **PDF + OCR ready**. Import a text PDF and a scanned PDF to confirm both
-   paths.
-
-All paths in the page are relative, so it works from a project site
-(`https://<user>.github.io/<repo>/`) as well as a user site.
-
 ## Project layout
 
 ```text
@@ -129,15 +88,14 @@ licenses/Apache-2.0.txt        Apache License 2.0 text
 
 ## Known limits
 
-- The checker is a heuristic aid; it will miss issues and can produce false
-  positives. Litigation relevance lines are prompts, not advice.
+- The Claim review tool is a heuristic aid; it will miss issues and can produce false
+  positives.
 - Chart verdicts, comparison prompts, support and basis checks, and scope hints
   are descriptive.
 - Antecedent-basis checks are English-centric. The tree parses German and French
   dependency phrases, but the checker reviews English claim language only.
 - EP feature classification, added-subject-matter and extension-of-protection
   hints, and the basis table are heuristics.
-- Status labels and dependency notes are user annotations, not legal findings.
 - PDF extraction depends on the text layer and OCR quality. Always review
   extracted claims before running any check.
 - No automatic updates, accounts, or external processing.
