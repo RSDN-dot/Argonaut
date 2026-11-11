@@ -60,7 +60,7 @@ when you need PDF import or OCR. Pasted text works either way.
 
 ## Known limits
 
-- The Claim review tool is a heuristic aid; it will miss issues and can produce false
+- The Claim review tool is a heuristic aid. It can miss issues and can produce false
   positives.
 - Chart verdicts, comparison prompts, support and basis checks, and scope hints
   are descriptive.
