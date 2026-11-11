@@ -58,34 +58,6 @@ when you need PDF import or OCR. Pasted text works either way.
 - State is kept in `localStorage`; clearing site data clears the workspace. Use
   the Markdown, CSV, and Word exports for durable copies.
 
-## Run locally
-
-From this folder:
-
-```sh
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>. Any static file server works. Opening
-`index.html` directly is fine for pasted text, but PDF import and OCR need the
-HTTP origin.
-
-Exports build `.docx`, Markdown, and CSV files in the browser. Print styles hide
-the controls so printouts show the analysis only.
-
-## Project layout
-
-```text
-index.html                     the complete application
-vendor/pdfjs/                  PDF.js 3.11.174 + worker
-vendor/tesseract/              Tesseract.js 5.1.1 + worker
-vendor/tesseract/core/         WASM core (SIMD and non-SIMD LSTM builds)
-vendor/tesseract/lang/         English traineddata
-LICENSE                        MIT (Argonaut's own code)
-THIRD-PARTY-LICENSES.md        bundled components and their licenses
-licenses/Apache-2.0.txt        Apache License 2.0 text
-```
-
 ## Known limits
 
 - The Claim review tool is a heuristic aid; it will miss issues and can produce false
