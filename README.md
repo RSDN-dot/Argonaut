@@ -21,9 +21,9 @@ result against the current law and the record.
 
 Two jurisdictions share one code path:
 
-- **United States** — 6 review headings: Eligibility, Definiteness,
+- **United States** 6 review headings: Eligibility, Definiteness,
   Description, Enablement, Structure, and Consistency.
-- **EPC** — 13 EPC review sections based on the EPO guidelines on patentability: Technical, Two-part form,
+- **EPC** 13 EPC review sections based on the EPO guidelines on patentability: Technical, Two-part form,
   Category, Clarity, Antecedent, Relative terms, Optional features, Result / negative, References, Parameters,
   Support, Conciseness, Numbering / form.
 
